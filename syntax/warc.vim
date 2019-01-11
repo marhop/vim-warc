@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     WARC (Web ARChive) files
 " Maintainer:   Martin Hoppenheit <martin@hoppenheit.info>
-" Last Change:  2019 Jan 09
+" Last Change:  2019 Jan 11
 
 if version < 600
     syntax clear
@@ -32,10 +32,11 @@ syn match warcFieldName /^WARC-Identified-Payload-Type:/
 syn match warcFieldName /^WARC-Segment-Origin-ID:/
 syn match warcFieldName /^WARC-Segment-Number:/
 syn match warcFieldName /^WARC-Segment-Total-Length:/
-syn match warcTargetUri /\(^WARC-Target-URI:\s*\)\@<=.*$/
+syn match warcFieldValue /\(^WARC-Target-URI:\s*\)\@<=.*$/
+syn match warcFieldValue /\(^WARC-Type:\s*\)\@<=.*$/
 
 hi def link warcVersion PreProc
 hi def link warcFieldName Identifier
-hi def link warcTargetUri Statement
+hi def link warcFieldValue Statement
 
 let b:current_syntax = "warc"
